@@ -1,0 +1,38 @@
+<!-- <p>test-one works!</p> -->
+
+<br><br>
+<div class="container">
+
+    <form [formGroup]="userform" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-6">
+                <input formControlName="Name" type="text" class="form-control" placeholder="First name">
+            </div>
+            <div class="col-md-6">
+                <input formControlName="Phone" type="text" class="form-control" placeholder="Last name">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-success">Add</button>
+            </div>
+
+        </div>
+    </form>
+    <br>
+    <ag-grid-angular style="width: 70%; height: 350px;" 
+        class="ag-theme-alpine" 
+        [rowData]="rowData"
+        [columnDefs]="columnDefs"
+        [defaultColDef]="defaultColDef"
+        (rowEditingStopped)="onRowEditingStopped($event)"
+        (rowEditingStarted)="onRowEditingStarted($event)"
+        (gridReady)="onGridReady($event)"
+        (cellClicked)="onCellClicked($event)"
+        editType="fullRow"
+        [suppressClickEdit]="true">
+    </ag-grid-angular>
+
+</div>
+<h1></h1>
